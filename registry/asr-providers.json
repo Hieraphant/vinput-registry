@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "asr.xifan.doubao",
+      "command": "python3",
+      "script_urls": [
+        "https://raw.githubusercontent.com/xifan2333/vinput-registry/main/resources/asr/asr.xifan.doubao/entry.py",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/xifan2333/vinput-registry/main/resources/asr/asr.xifan.doubao/entry.py",
+        "https://ghfast.top/https://raw.githubusercontent.com/xifan2333/vinput-registry/main/resources/asr/asr.xifan.doubao/entry.py"
+      ],
+      "readme_url": "https://github.com/xifan2333/vinput-registry/blob/main/resources/asr/asr.xifan.doubao/README.md",
+      "envs": [
+        { "name": "DOUBAO_ASR_APP_ID", "required": true },
+        { "name": "DOUBAO_ASR_ACCESS_TOKEN", "required": true },
+        { "name": "DOUBAO_ASR_URL", "required": false },
+        { "name": "DOUBAO_ASR_RESOURCE_ID", "required": false },
+        { "name": "DOUBAO_ASR_MODEL_NAME", "required": false },
+        { "name": "DOUBAO_ASR_USER_ID", "required": false },
+        { "name": "DOUBAO_ASR_TIMEOUT", "required": false }
+      ]
+    },
+    {
+      "id": "asr.xifan.elevenlabs",
+      "command": "python3",
+      "script_urls": [
+        "https://raw.githubusercontent.com/xifan2333/vinput-registry/main/resources/asr/asr.xifan.elevenlabs/entry.py",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/xifan2333/vinput-registry/main/resources/asr/asr.xifan.elevenlabs/entry.py",
+        "https://ghfast.top/https://raw.githubusercontent.com/xifan2333/vinput-registry/main/resources/asr/asr.xifan.elevenlabs/entry.py"
+      ],
+      "readme_url": "https://github.com/xifan2333/vinput-registry/blob/main/resources/asr/asr.xifan.elevenlabs/README.md",
+      "envs": [
+        { "name": "ELEVENLABS_API_KEY", "required": true },
+        { "name": "ELEVENLABS_MODEL_ID", "required": false },
+        { "name": "ELEVENLABS_LANGUAGE", "required": false },
+        { "name": "ELEVENLABS_URL", "required": false },
+        { "name": "ELEVENLABS_TIMEOUT", "required": false }
+      ]
+    },
+    {
+      "id": "asr.xifan.openai-compatible",
+      "command": "python3",
+      "script_urls": [
+        "https://raw.githubusercontent.com/xifan2333/vinput-registry/main/resources/asr/asr.xifan.openai-compatible/entry.py",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/xifan2333/vinput-registry/main/resources/asr/asr.xifan.openai-compatible/entry.py",
+        "https://ghfast.top/https://raw.githubusercontent.com/xifan2333/vinput-registry/main/resources/asr/asr.xifan.openai-compatible/entry.py"
+      ],
+      "readme_url": "https://github.com/xifan2333/vinput-registry/blob/main/resources/asr/asr.xifan.openai-compatible/README.md",
+      "envs": [
+        { "name": "OPENAI_COMPATIBLE_ASR_API_KEY", "required": true },
+        { "name": "OPENAI_COMPATIBLE_ASR_URL", "required": false },
+        { "name": "OPENAI_COMPATIBLE_ASR_BASE_URL", "required": false },
+        { "name": "OPENAI_COMPATIBLE_ASR_MODEL", "required": false },
+        { "name": "OPENAI_COMPATIBLE_ASR_LANGUAGE", "required": false },
+        { "name": "OPENAI_COMPATIBLE_ASR_PROMPT", "required": false },
+        { "name": "OPENAI_COMPATIBLE_ASR_RESPONSE_FORMAT", "required": false },
+        { "name": "OPENAI_COMPATIBLE_ASR_TEMPERATURE", "required": false },
+        { "name": "OPENAI_COMPATIBLE_ASR_TIMEOUT", "required": false }
+      ]
+    }
+  ]
+}
