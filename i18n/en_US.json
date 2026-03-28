@@ -24,5 +24,7 @@
   "model.sherpa-onnx.zipformer-zh-en.title": "Zipformer Chinese-English Bilingual",
   "model.sherpa-onnx.zipformer-zh-en.description": "Bilingual Zipformer transducer model for both Chinese and English, with hotword support.",
   "model.sherpa-onnx.streaming-zipformer-en-20m-2023-02-17.title": "Streaming Zipformer English 20M",
-  "model.sherpa-onnx.streaming-zipformer-en-20m-2023-02-17.description": "Small sherpa-onnx English streaming Zipformer transducer model for backend and interaction testing."
+  "model.sherpa-onnx.streaming-zipformer-en-20m-2023-02-17.description": "Small sherpa-onnx English streaming Zipformer transducer model for backend and interaction testing.",
+  "model.vosk.small-en-us-0.15.title": "Vosk Small English US 0.15",
+  "model.vosk.small-en-us-0.15.description": "Compact official Vosk English model archive at about 39 MB, suitable for lightweight local streaming recognition."
 }
