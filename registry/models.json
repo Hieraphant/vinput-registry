@@ -196,6 +196,34 @@
           "max_active_paths": "4"
         }
       }
+    },
+    {
+      "id": "model.sherpa-onnx.streaming-zipformer-en-20m-2023-02-17",
+      "urls": [
+        "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-en-20M-2023-02-17.tar.bz2",
+        "https://gh-proxy.com/https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-en-20M-2023-02-17.tar.bz2",
+        "https://ghfast.top/https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-en-20M-2023-02-17.tar.bz2"
+      ],
+      "sha256": "9c559283e8498d3fe95913c79ca1cb454bb26281ac2b102b41306c7d752765d9",
+      "size_bytes": 127887156,
+      "language": "en",
+      "vinput_model": {
+        "backend": "sherpa-streaming",
+        "model_type": "zipformer_transducer",
+        "language": "en",
+        "supports_hotwords": true,
+        "size_bytes": 127887156,
+        "files": {
+          "encoder": "encoder-epoch-99-avg-1.int8.onnx",
+          "decoder": "decoder-epoch-99-avg-1.onnx",
+          "joiner": "joiner-epoch-99-avg-1.int8.onnx",
+          "tokens": "tokens.txt"
+        },
+        "params": {
+          "decoding_method": "greedy_search",
+          "max_active_paths": "4"
+        }
+      }
     }
   ]
 }
