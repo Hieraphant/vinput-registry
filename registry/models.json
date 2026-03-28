@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "items": [
     {
       "id": "model.sherpa-onnx.dolphin-base-ctc-multi-lang-int8",
@@ -12,15 +12,46 @@
       "size_bytes": 80671385,
       "language": "multilingual",
       "vinput_model": {
-        "model_type": "dolphin",
+        "backend": "sherpa-offline",
         "language": "multilingual",
-        "supports_hotwords": false,
         "size_bytes": 80671385,
-        "files": {
-          "model": "model.int8.onnx",
-          "tokens": "tokens.txt"
+        "supports_hotwords": false,
+        "runtime": "offline",
+        "family": "dolphin",
+        "recognizer": {
+          "feat_config": {
+            "sample_rate": 16000,
+            "feature_dim": 80
+          },
+          "lm_config": {
+            "model": "",
+            "scale": 0.0
+          },
+          "decoding_method": "greedy_search",
+          "max_active_paths": 4,
+          "hotwords_file": "",
+          "hotwords_score": 1.5,
+          "rule_fsts": "",
+          "rule_fars": "",
+          "blank_penalty": 0.0,
+          "hr": {
+            "lexicon": "",
+            "rule_fsts": ""
+          }
         },
-        "params": {}
+        "model": {
+          "tokens": "tokens.txt",
+          "num_threads": 1,
+          "debug": 0,
+          "provider": "cpu",
+          "model_type": "",
+          "modeling_unit": "",
+          "bpe_vocab": "",
+          "telespeech_ctc": "",
+          "dolphin": {
+            "model": "model.int8.onnx"
+          }
+        }
       }
     },
     {
@@ -34,16 +65,47 @@
       "size_bytes": 165675008,
       "language": "zh",
       "vinput_model": {
-        "model_type": "sense_voice",
+        "backend": "sherpa-offline",
         "language": "zh",
-        "supports_hotwords": false,
         "size_bytes": 165675008,
-        "files": {
-          "model": "model.int8.onnx",
-          "tokens": "tokens.txt"
+        "supports_hotwords": false,
+        "runtime": "offline",
+        "family": "sense_voice",
+        "recognizer": {
+          "feat_config": {
+            "sample_rate": 16000,
+            "feature_dim": 80
+          },
+          "lm_config": {
+            "model": "",
+            "scale": 0.0
+          },
+          "decoding_method": "greedy_search",
+          "max_active_paths": 4,
+          "hotwords_file": "",
+          "hotwords_score": 1.5,
+          "rule_fsts": "",
+          "rule_fars": "",
+          "blank_penalty": 0.0,
+          "hr": {
+            "lexicon": "",
+            "rule_fsts": ""
+          }
         },
-        "params": {
-          "use_itn": true
+        "model": {
+          "tokens": "tokens.txt",
+          "num_threads": 1,
+          "debug": 0,
+          "provider": "cpu",
+          "model_type": "",
+          "modeling_unit": "",
+          "bpe_vocab": "",
+          "telespeech_ctc": "",
+          "sense_voice": {
+            "model": "model.int8.onnx",
+            "language": "zh",
+            "use_itn": true
+          }
         }
       }
     },
@@ -58,16 +120,47 @@
       "size_bytes": 187693225,
       "language": "multilingual",
       "vinput_model": {
-        "model_type": "sense_voice",
+        "backend": "sherpa-offline",
         "language": "multilingual",
-        "supports_hotwords": false,
         "size_bytes": 187693225,
-        "files": {
-          "model": "model.int8.onnx",
-          "tokens": "tokens.txt"
+        "supports_hotwords": false,
+        "runtime": "offline",
+        "family": "sense_voice",
+        "recognizer": {
+          "feat_config": {
+            "sample_rate": 16000,
+            "feature_dim": 80
+          },
+          "lm_config": {
+            "model": "",
+            "scale": 0.0
+          },
+          "decoding_method": "greedy_search",
+          "max_active_paths": 4,
+          "hotwords_file": "",
+          "hotwords_score": 1.5,
+          "rule_fsts": "",
+          "rule_fars": "",
+          "blank_penalty": 0.0,
+          "hr": {
+            "lexicon": "",
+            "rule_fsts": ""
+          }
         },
-        "params": {
-          "use_itn": true
+        "model": {
+          "tokens": "tokens.txt",
+          "num_threads": 1,
+          "debug": 0,
+          "provider": "cpu",
+          "model_type": "",
+          "modeling_unit": "",
+          "bpe_vocab": "",
+          "telespeech_ctc": "",
+          "sense_voice": {
+            "model": "model.int8.onnx",
+            "language": "auto",
+            "use_itn": true
+          }
         }
       }
     },
@@ -82,16 +175,45 @@
       "size_bytes": 77920048,
       "language": "zh",
       "vinput_model": {
-        "model_type": "paraformer",
+        "backend": "sherpa-offline",
         "language": "zh",
-        "supports_hotwords": false,
         "size_bytes": 77920048,
-        "files": {
-          "model": "model.int8.onnx",
-          "tokens": "tokens.txt"
+        "supports_hotwords": false,
+        "runtime": "offline",
+        "family": "paraformer",
+        "recognizer": {
+          "feat_config": {
+            "sample_rate": 16000,
+            "feature_dim": 80
+          },
+          "lm_config": {
+            "model": "",
+            "scale": 0.0
+          },
+          "decoding_method": "greedy_search",
+          "max_active_paths": 4,
+          "hotwords_file": "",
+          "hotwords_score": 1.5,
+          "rule_fsts": "",
+          "rule_fars": "",
+          "blank_penalty": 0.0,
+          "hr": {
+            "lexicon": "",
+            "rule_fsts": ""
+          }
         },
-        "params": {
-          "modeling_unit": "cjkchar"
+        "model": {
+          "tokens": "tokens.txt",
+          "num_threads": 1,
+          "debug": 0,
+          "provider": "cpu",
+          "model_type": "",
+          "modeling_unit": "cjkchar",
+          "bpe_vocab": "",
+          "telespeech_ctc": "",
+          "paraformer": {
+            "model": "model.int8.onnx"
+          }
         }
       }
     },
@@ -106,16 +228,45 @@
       "size_bytes": 234051698,
       "language": "zh",
       "vinput_model": {
-        "model_type": "paraformer",
+        "backend": "sherpa-offline",
         "language": "zh",
-        "supports_hotwords": false,
         "size_bytes": 234051698,
-        "files": {
-          "model": "model.int8.onnx",
-          "tokens": "tokens.txt"
+        "supports_hotwords": false,
+        "runtime": "offline",
+        "family": "paraformer",
+        "recognizer": {
+          "feat_config": {
+            "sample_rate": 16000,
+            "feature_dim": 80
+          },
+          "lm_config": {
+            "model": "",
+            "scale": 0.0
+          },
+          "decoding_method": "greedy_search",
+          "max_active_paths": 4,
+          "hotwords_file": "",
+          "hotwords_score": 1.5,
+          "rule_fsts": "",
+          "rule_fars": "",
+          "blank_penalty": 0.0,
+          "hr": {
+            "lexicon": "",
+            "rule_fsts": ""
+          }
         },
-        "params": {
-          "modeling_unit": "cjkchar"
+        "model": {
+          "tokens": "tokens.txt",
+          "num_threads": 1,
+          "debug": 0,
+          "provider": "cpu",
+          "model_type": "",
+          "modeling_unit": "cjkchar",
+          "bpe_vocab": "",
+          "telespeech_ctc": "",
+          "paraformer": {
+            "model": "model.int8.onnx"
+          }
         }
       }
     },
@@ -130,16 +281,45 @@
       "size_bytes": 228262632,
       "language": "zh",
       "vinput_model": {
-        "model_type": "paraformer",
+        "backend": "sherpa-offline",
         "language": "zh",
-        "supports_hotwords": false,
         "size_bytes": 228262632,
-        "files": {
-          "model": "model.int8.onnx",
-          "tokens": "tokens.txt"
+        "supports_hotwords": false,
+        "runtime": "offline",
+        "family": "paraformer",
+        "recognizer": {
+          "feat_config": {
+            "sample_rate": 16000,
+            "feature_dim": 80
+          },
+          "lm_config": {
+            "model": "",
+            "scale": 0.0
+          },
+          "decoding_method": "greedy_search",
+          "max_active_paths": 4,
+          "hotwords_file": "",
+          "hotwords_score": 1.5,
+          "rule_fsts": "",
+          "rule_fars": "",
+          "blank_penalty": 0.0,
+          "hr": {
+            "lexicon": "",
+            "rule_fsts": ""
+          }
         },
-        "params": {
-          "modeling_unit": "cjkchar"
+        "model": {
+          "tokens": "tokens.txt",
+          "num_threads": 1,
+          "debug": 0,
+          "provider": "cpu",
+          "model_type": "",
+          "modeling_unit": "cjkchar",
+          "bpe_vocab": "",
+          "telespeech_ctc": "",
+          "paraformer": {
+            "model": "model.int8.onnx"
+          }
         }
       }
     },
@@ -154,19 +334,47 @@
       "size_bytes": 309195644,
       "language": "zh",
       "vinput_model": {
-        "model_type": "zipformer_transducer",
+        "backend": "sherpa-offline",
         "language": "zh",
-        "supports_hotwords": true,
         "size_bytes": 309195644,
-        "files": {
-          "encoder": "encoder-epoch-20-avg-1.int8.onnx",
-          "decoder": "decoder-epoch-20-avg-1.int8.onnx",
-          "joiner": "joiner-epoch-20-avg-1.int8.onnx",
-          "tokens": "tokens.txt"
-        },
-        "params": {
+        "supports_hotwords": true,
+        "runtime": "offline",
+        "family": "transducer",
+        "recognizer": {
+          "feat_config": {
+            "sample_rate": 16000,
+            "feature_dim": 80
+          },
+          "lm_config": {
+            "model": "",
+            "scale": 0.0
+          },
           "decoding_method": "modified_beam_search",
-          "max_active_paths": "4"
+          "max_active_paths": 4,
+          "hotwords_file": "",
+          "hotwords_score": 1.5,
+          "rule_fsts": "",
+          "rule_fars": "",
+          "blank_penalty": 0.0,
+          "hr": {
+            "lexicon": "",
+            "rule_fsts": ""
+          }
+        },
+        "model": {
+          "tokens": "tokens.txt",
+          "num_threads": 1,
+          "debug": 0,
+          "provider": "cpu",
+          "model_type": "",
+          "modeling_unit": "",
+          "bpe_vocab": "",
+          "telespeech_ctc": "",
+          "transducer": {
+            "encoder": "encoder-epoch-20-avg-1.int8.onnx",
+            "decoder": "decoder-epoch-20-avg-1.int8.onnx",
+            "joiner": "joiner-epoch-20-avg-1.int8.onnx"
+          }
         }
       }
     },
@@ -181,19 +389,47 @@
       "size_bytes": 311427072,
       "language": "zh_en",
       "vinput_model": {
-        "model_type": "zipformer_transducer",
+        "backend": "sherpa-offline",
         "language": "zh_en",
-        "supports_hotwords": true,
         "size_bytes": 311427072,
-        "files": {
-          "encoder": "encoder-epoch-34-avg-19.onnx",
-          "decoder": "decoder-epoch-34-avg-19.onnx",
-          "joiner": "joiner-epoch-34-avg-19.onnx",
-          "tokens": "tokens.txt"
-        },
-        "params": {
+        "supports_hotwords": true,
+        "runtime": "offline",
+        "family": "transducer",
+        "recognizer": {
+          "feat_config": {
+            "sample_rate": 16000,
+            "feature_dim": 80
+          },
+          "lm_config": {
+            "model": "",
+            "scale": 0.0
+          },
           "decoding_method": "modified_beam_search",
-          "max_active_paths": "4"
+          "max_active_paths": 4,
+          "hotwords_file": "",
+          "hotwords_score": 1.5,
+          "rule_fsts": "",
+          "rule_fars": "",
+          "blank_penalty": 0.0,
+          "hr": {
+            "lexicon": "",
+            "rule_fsts": ""
+          }
+        },
+        "model": {
+          "tokens": "tokens.txt",
+          "num_threads": 1,
+          "debug": 0,
+          "provider": "cpu",
+          "model_type": "",
+          "modeling_unit": "",
+          "bpe_vocab": "",
+          "telespeech_ctc": "",
+          "transducer": {
+            "encoder": "encoder-epoch-34-avg-19.onnx",
+            "decoder": "decoder-epoch-34-avg-19.onnx",
+            "joiner": "joiner-epoch-34-avg-19.onnx"
+          }
         }
       }
     },
@@ -209,19 +445,53 @@
       "language": "en",
       "vinput_model": {
         "backend": "sherpa-streaming",
-        "model_type": "zipformer_transducer",
         "language": "en",
-        "supports_hotwords": true,
         "size_bytes": 127887156,
-        "files": {
-          "encoder": "encoder-epoch-99-avg-1.int8.onnx",
-          "decoder": "decoder-epoch-99-avg-1.onnx",
-          "joiner": "joiner-epoch-99-avg-1.int8.onnx",
-          "tokens": "tokens.txt"
-        },
-        "params": {
+        "supports_hotwords": true,
+        "runtime": "online",
+        "family": "transducer",
+        "recognizer": {
+          "feat_config": {
+            "sample_rate": 16000,
+            "feature_dim": 80
+          },
           "decoding_method": "greedy_search",
-          "max_active_paths": "4"
+          "max_active_paths": 4,
+          "enable_endpoint": 0,
+          "rule1_min_trailing_silence": 2.4,
+          "rule2_min_trailing_silence": 1.2,
+          "rule3_min_utterance_length": 20.0,
+          "hotwords_file": "",
+          "hotwords_score": 1.5,
+          "ctc_fst_decoder_config": {
+            "graph": "",
+            "max_active": 3000
+          },
+          "rule_fsts": "",
+          "rule_fars": "",
+          "blank_penalty": 0.0,
+          "hotwords_buf": "",
+          "hotwords_buf_size": 0,
+          "hr": {
+            "lexicon": "",
+            "rule_fsts": ""
+          }
+        },
+        "model": {
+          "tokens": "tokens.txt",
+          "num_threads": 1,
+          "provider": "cpu",
+          "debug": 0,
+          "model_type": "",
+          "modeling_unit": "",
+          "bpe_vocab": "",
+          "tokens_buf": "",
+          "tokens_buf_size": 0,
+          "transducer": {
+            "encoder": "encoder-epoch-99-avg-1.int8.onnx",
+            "decoder": "decoder-epoch-99-avg-1.onnx",
+            "joiner": "joiner-epoch-99-avg-1.int8.onnx"
+          }
         }
       }
     }
