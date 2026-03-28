@@ -1,4 +1,4 @@
-# asr.xifan.doubao
+# providers.doubao.batch
 
 Cloud ASR provider script for Doubao / Volcengine fast file recognition.
 

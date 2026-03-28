@@ -1,4 +1,4 @@
-# asr.xifan.elevenlabs
+# providers.elevenlabs.batch
 
 Cloud ASR provider script for the ElevenLabs speech-to-text API.
 

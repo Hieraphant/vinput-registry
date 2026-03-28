@@ -3,6 +3,7 @@
   "items": [
     {
       "id": "model.sherpa-onnx.dolphin-base-ctc-multi-lang-int8",
+      "short_id": "onnx-dolphin-multi-int8-off",
       "urls": [
         "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-dolphin-base-ctc-multi-lang-int8-2025-04-02.tar.bz2",
         "https://gh-proxy.com/https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-dolphin-base-ctc-multi-lang-int8-2025-04-02.tar.bz2",
@@ -56,6 +57,7 @@
     },
     {
       "id": "model.sherpa-onnx.sense-voice-zh-en-ja-ko-yue-int8",
+      "short_id": "onnx-sv-zh-int8-off",
       "urls": [
         "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-int8-2025-09-09.tar.bz2",
         "https://gh-proxy.com/https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-int8-2025-09-09.tar.bz2",
@@ -111,6 +113,7 @@
     },
     {
       "id": "model.sherpa-onnx.sense-voice-funasr-nano-int8",
+      "short_id": "onnx-sv-multi-int8-off",
       "urls": [
         "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-sense-voice-funasr-nano-int8-2025-12-17.tar.bz2",
         "https://gh-proxy.com/https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-sense-voice-funasr-nano-int8-2025-12-17.tar.bz2",
@@ -166,6 +169,7 @@
     },
     {
       "id": "model.sherpa-onnx.paraformer-zh-small",
+      "short_id": "onnx-pf-zh-sm-off",
       "urls": [
         "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-paraformer-zh-small-2024-03-09.tar.bz2",
         "https://gh-proxy.com/https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-paraformer-zh-small-2024-03-09.tar.bz2",
@@ -219,6 +223,7 @@
     },
     {
       "id": "model.sherpa-onnx.paraformer-zh-2023-09-14",
+      "short_id": "onnx-pf-zh-off",
       "urls": [
         "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-paraformer-zh-2023-09-14.tar.bz2",
         "https://gh-proxy.com/https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-paraformer-zh-2023-09-14.tar.bz2",
@@ -272,6 +277,7 @@
     },
     {
       "id": "model.sherpa-onnx.paraformer-zh-int8-2025-10-07",
+      "short_id": "onnx-pf-zh-int8-off",
       "urls": [
         "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-paraformer-zh-int8-2025-10-07.tar.bz2",
         "https://gh-proxy.com/https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-paraformer-zh-int8-2025-10-07.tar.bz2",
@@ -325,6 +331,7 @@
     },
     {
       "id": "model.sherpa-onnx.zipformer-multi-zh-hans",
+      "short_id": "onnx-zf-zh-multi-int8-off",
       "urls": [
         "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-zipformer-multi-zh-hans-2023-9-2.tar.bz2",
         "https://gh-proxy.com/https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-zipformer-multi-zh-hans-2023-9-2.tar.bz2",
@@ -380,6 +387,7 @@
     },
     {
       "id": "model.sherpa-onnx.zipformer-zh-en",
+      "short_id": "onnx-zf-zh-en-off",
       "urls": [
         "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-zipformer-zh-en-2023-11-22.tar.bz2",
         "https://gh-proxy.com/https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-zipformer-zh-en-2023-11-22.tar.bz2",
@@ -435,6 +443,7 @@
     },
     {
       "id": "model.sherpa-onnx.streaming-zipformer-en-20m-2023-02-17",
+      "short_id": "onnx-zf-en-20m-stream",
       "urls": [
         "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-en-20M-2023-02-17.tar.bz2",
         "https://gh-proxy.com/https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-en-20M-2023-02-17.tar.bz2",
@@ -497,6 +506,7 @@
     },
     {
       "id": "model.sherpa-onnx.streaming-zipformer-zh-int8-2025-06-30",
+      "short_id": "onnx-zf-zh-int8-stream",
       "urls": [
         "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-int8-2025-06-30.tar.bz2",
         "https://gh-proxy.com/https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-int8-2025-06-30.tar.bz2",
@@ -559,6 +569,7 @@
     },
     {
       "id": "model.vosk.small-en-us-0.15",
+      "short_id": "vosk-en-sm-stream",
       "urls": [
         "https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip"
       ],
@@ -587,6 +598,7 @@
     },
     {
       "id": "model.vosk.small-cn-0.22",
+      "short_id": "vosk-zh-sm-stream",
       "urls": [
         "https://alphacephei.com/vosk/models/vosk-model-small-cn-0.22.zip"
       ],
@@ -615,6 +627,7 @@
     },
     {
       "id": "model.vosk.offline.small-en-us-0.15",
+      "short_id": "vosk-en-sm-off",
       "urls": [
         "https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip"
       ],
@@ -643,6 +656,7 @@
     },
     {
       "id": "model.vosk.offline.small-cn-0.22",
+      "short_id": "vosk-zh-sm-off",
       "urls": [
         "https://alphacephei.com/vosk/models/vosk-model-small-cn-0.22.zip"
       ],

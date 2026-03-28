@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "adapters.mtranserver.proxy",
+      "short_id": "mtran-proxy",
+      "command": "python3",
+      "script_urls": [
+        "https://raw.githubusercontent.com/xifan2333/vinput-registry/main/resources/adapters/mtranserver/proxy/entry.py",
+        "https://gh-proxy.com/https://raw.githubusercontent.com/xifan2333/vinput-registry/main/resources/adapters/mtranserver/proxy/entry.py",
+        "https://ghfast.top/https://raw.githubusercontent.com/xifan2333/vinput-registry/main/resources/adapters/mtranserver/proxy/entry.py"
+      ],
+      "readme_url": "https://github.com/xifan2333/vinput-registry/blob/main/resources/adapters/mtranserver/proxy/README.md",
+      "envs": [
+        { "name": "MTRAN_URL", "required": false },
+        { "name": "MTRAN_TOKEN", "required": false },
+        { "name": "MTRAN_PORT", "required": false }
+      ]
+    }
+  ]
+}

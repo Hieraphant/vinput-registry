@@ -1,4 +1,4 @@
-# adaptor.xifan.mtranserver-proxy
+# adapters.mtranserver.proxy
 
 Managed local LLM adaptor that exposes MTranServer through an OpenAI-compatible API.
 

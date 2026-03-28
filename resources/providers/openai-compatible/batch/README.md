@@ -1,4 +1,4 @@
-# asr.xifan.openai-compatible
+# providers.openai-compatible.batch
 
 Cloud ASR provider script for OpenAI-compatible `/v1/audio/transcriptions` endpoints.
 
