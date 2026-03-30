@@ -129,11 +129,11 @@ def parse_transcript(payload: bytes, response_format: str) -> str:
 
 
 def resolve_endpoint() -> str:
-    explicit_url = get_optional_env("OPENAI_COMPATIBLE_ASR_URL")
+    explicit_url = get_optional_env("VINPUT_ASR_URL")
     if explicit_url:
         return explicit_url
 
-    base_url = get_optional_env("OPENAI_COMPATIBLE_ASR_BASE_URL")
+    base_url = get_optional_env("VINPUT_ASR_BASE_URL")
     if base_url:
         return base_url.rstrip("/") + "/audio/transcriptions"
 
@@ -183,20 +183,20 @@ def transcribe(
 
 def main() -> int:
     try:
-        api_key = get_required_env("OPENAI_COMPATIBLE_ASR_API_KEY")
+        api_key = get_required_env("VINPUT_ASR_API_KEY")
         endpoint = resolve_endpoint()
-        model = get_optional_env("OPENAI_COMPATIBLE_ASR_MODEL", DEFAULT_MODEL)
+        model = get_optional_env("VINPUT_ASR_MODEL", DEFAULT_MODEL)
         response_format = get_optional_env(
-            "OPENAI_COMPATIBLE_ASR_RESPONSE_FORMAT",
+            "VINPUT_ASR_RESPONSE_FORMAT",
             DEFAULT_RESPONSE_FORMAT,
         )
         timeout = get_optional_int_env(
-            "OPENAI_COMPATIBLE_ASR_TIMEOUT", DEFAULT_TIMEOUT
+            "VINPUT_ASR_TIMEOUT", DEFAULT_TIMEOUT
         )
-        language = get_optional_env("OPENAI_COMPATIBLE_ASR_LANGUAGE") or None
-        prompt = get_optional_env("OPENAI_COMPATIBLE_ASR_PROMPT") or None
+        language = get_optional_env("VINPUT_ASR_LANGUAGE") or None
+        prompt = get_optional_env("VINPUT_ASR_PROMPT") or None
         temperature = (
-            get_optional_env("OPENAI_COMPATIBLE_ASR_TEMPERATURE") or None
+            get_optional_env("VINPUT_ASR_TEMPERATURE") or None
         )
         pcm_audio = read_audio_input()
 

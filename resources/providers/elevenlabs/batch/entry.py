@@ -154,14 +154,14 @@ def transcribe(
 
 def main() -> int:
     try:
-        api_key = get_required_env("ELEVENLABS_API_KEY")
-        model_id = get_optional_env("ELEVENLABS_MODEL_ID", DEFAULT_MODEL_ID)
-        language_code = get_optional_env("ELEVENLABS_LANGUAGE") or None
-        endpoint = get_optional_env("ELEVENLABS_URL", DEFAULT_URL)
-        timeout = get_optional_int_env("ELEVENLABS_TIMEOUT", DEFAULT_TIMEOUT)
-        enable_logging = get_optional_bool_env("ELEVENLABS_ENABLE_LOGGING", True)
+        api_key = get_required_env("VINPUT_ASR_API_KEY")
+        model_id = get_optional_env("VINPUT_ASR_MODEL", DEFAULT_MODEL_ID)
+        language_code = get_optional_env("VINPUT_ASR_LANGUAGE") or None
+        endpoint = get_optional_env("VINPUT_ASR_URL", DEFAULT_URL)
+        timeout = get_optional_int_env("VINPUT_ASR_TIMEOUT", DEFAULT_TIMEOUT)
+        enable_logging = get_optional_bool_env("VINPUT_ASR_ENABLE_LOGGING", True)
         tag_audio_events = get_optional_bool_env(
-            "ELEVENLABS_TAG_AUDIO_EVENTS", False
+            "VINPUT_ASR_TAG_AUDIO_EVENTS", False
         )
         pcm_audio = read_audio_input()
 

@@ -14,15 +14,15 @@ Cloud ASR provider script for OpenAI-compatible `/v1/audio/transcriptions` endpo
 
 ## Environment Variables
 
-- `OPENAI_COMPATIBLE_ASR_API_KEY` required
-- `OPENAI_COMPATIBLE_ASR_URL` optional
-- `OPENAI_COMPATIBLE_ASR_BASE_URL` optional
-- `OPENAI_COMPATIBLE_ASR_MODEL` optional
-- `OPENAI_COMPATIBLE_ASR_LANGUAGE` optional
-- `OPENAI_COMPATIBLE_ASR_PROMPT` optional
-- `OPENAI_COMPATIBLE_ASR_RESPONSE_FORMAT` optional
-- `OPENAI_COMPATIBLE_ASR_TEMPERATURE` optional
-- `OPENAI_COMPATIBLE_ASR_TIMEOUT` optional
+- `VINPUT_ASR_API_KEY` required
+- `VINPUT_ASR_URL` optional
+- `VINPUT_ASR_BASE_URL` optional
+- `VINPUT_ASR_MODEL` optional
+- `VINPUT_ASR_LANGUAGE` optional
+- `VINPUT_ASR_PROMPT` optional
+- `VINPUT_ASR_RESPONSE_FORMAT` optional
+- `VINPUT_ASR_TEMPERATURE` optional
+- `VINPUT_ASR_TIMEOUT` optional
 
 ## Notes
 

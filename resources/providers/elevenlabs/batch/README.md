@@ -14,11 +14,11 @@ Cloud ASR provider script for the ElevenLabs speech-to-text API.
 
 ## Environment Variables
 
-- `ELEVENLABS_API_KEY` required
-- `ELEVENLABS_MODEL_ID` optional
-- `ELEVENLABS_LANGUAGE` optional
-- `ELEVENLABS_URL` optional
-- `ELEVENLABS_TIMEOUT` optional
+- `VINPUT_ASR_API_KEY` required
+- `VINPUT_ASR_MODEL` optional
+- `VINPUT_ASR_LANGUAGE` optional
+- `VINPUT_ASR_URL` optional
+- `VINPUT_ASR_TIMEOUT` optional
 
 ## Notes
 

@@ -17,7 +17,7 @@ from urllib.parse import urlencode, urlparse
 DEFAULT_MODEL_ID = "scribe_v2_realtime"
 DEFAULT_URL = "wss://api.elevenlabs.io/v1/speech-to-text/realtime"
 DEFAULT_TIMEOUT = 30
-DEFAULT_FINISH_GRACE_SECS = 2.0
+DEFAULT_FINISH_GRACE_SECS = 0.2
 GUID = "258EAFA5-E914-47DA-95CA-C5AB0DC85B11"
 EXIT_RUNTIME_ERROR = 1
 EXIT_USAGE_ERROR = 2
@@ -294,38 +294,38 @@ class WebSocketClient:
 
 
 def build_url() -> str:
-    base_url = get_optional_env("ELEVENLABS_STREAM_URL", DEFAULT_URL)
+    base_url = get_optional_env("VINPUT_ASR_URL", DEFAULT_URL)
     params = {
-        "model_id": get_optional_env("ELEVENLABS_MODEL_ID", DEFAULT_MODEL_ID),
+        "model_id": get_optional_env("VINPUT_ASR_MODEL", DEFAULT_MODEL_ID),
         "include_timestamps": str(
-            get_optional_bool_env("ELEVENLABS_INCLUDE_TIMESTAMPS", True)
+            get_optional_bool_env("VINPUT_ASR_INCLUDE_TIMESTAMPS", True)
         ).lower(),
         "include_language_detection": str(
-            get_optional_bool_env("ELEVENLABS_INCLUDE_LANGUAGE_DETECTION", False)
+            get_optional_bool_env("VINPUT_ASR_INCLUDE_LANGUAGE_DETECTION", False)
         ).lower(),
-        "audio_format": get_optional_env("ELEVENLABS_AUDIO_FORMAT", "pcm_16000"),
-        "commit_strategy": get_optional_env("ELEVENLABS_COMMIT_STRATEGY", "manual"),
+        "audio_format": get_optional_env("VINPUT_ASR_AUDIO_FORMAT", "pcm_16000"),
+        "commit_strategy": get_optional_env("VINPUT_ASR_COMMIT_STRATEGY", "manual"),
         "enable_logging": str(
-            get_optional_bool_env("ELEVENLABS_ENABLE_LOGGING", True)
+            get_optional_bool_env("VINPUT_ASR_ENABLE_LOGGING", True)
         ).lower(),
     }
 
-    language = get_optional_env("ELEVENLABS_LANGUAGE")
+    language = get_optional_env("VINPUT_ASR_LANGUAGE")
     if language:
         params["language_code"] = language
 
     if params["commit_strategy"] == "vad":
         params["vad_silence_threshold_secs"] = str(
-            get_optional_float_env("ELEVENLABS_VAD_SILENCE_THRESHOLD_SECS", 1.5)
+            get_optional_float_env("VINPUT_ASR_VAD_SILENCE_THRESHOLD_SECS", 1.5)
         )
         params["vad_threshold"] = str(
-            get_optional_float_env("ELEVENLABS_VAD_THRESHOLD", 0.4)
+            get_optional_float_env("VINPUT_ASR_VAD_THRESHOLD", 0.4)
         )
         params["min_speech_duration_ms"] = str(
-            get_optional_int_env("ELEVENLABS_MIN_SPEECH_DURATION_MS", 100)
+            get_optional_int_env("VINPUT_ASR_MIN_SPEECH_DURATION_MS", 100)
         )
         params["min_silence_duration_ms"] = str(
-            get_optional_int_env("ELEVENLABS_MIN_SILENCE_DURATION_MS", 100)
+            get_optional_int_env("VINPUT_ASR_MIN_SILENCE_DURATION_MS", 100)
         )
 
     separator = "&" if "?" in base_url else "?"
@@ -414,10 +414,10 @@ def handle_server_message(message: Dict[str, Any], state: Dict[str, Any]) -> Non
 
 
 def run() -> int:
-    api_key = get_required_env("ELEVENLABS_API_KEY")
-    timeout = get_optional_int_env("ELEVENLABS_TIMEOUT", DEFAULT_TIMEOUT)
+    api_key = get_required_env("VINPUT_ASR_API_KEY")
+    timeout = get_optional_int_env("VINPUT_ASR_TIMEOUT", DEFAULT_TIMEOUT)
     finish_grace_secs = get_optional_float_env(
-        "ELEVENLABS_FINISH_GRACE_SECS", DEFAULT_FINISH_GRACE_SECS
+        "VINPUT_ASR_FINISH_GRACE_SECS", DEFAULT_FINISH_GRACE_SECS
     )
     url = build_url()
 
