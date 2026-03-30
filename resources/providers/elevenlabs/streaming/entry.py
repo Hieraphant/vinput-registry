@@ -85,6 +85,34 @@ def get_optional_bool_env(name: str, default: bool) -> bool:
     return value.strip().lower() not in {"0", "false", "no", "off"}
 
 
+def emit_fallback_final(state: Dict[str, Any], utterance_final: bool = True) -> bool:
+    visible_text = normalize_transcript_text(
+        combine_transcript(
+            str(state.get("confirmed_text", "")),
+            str(state.get("partial_text", "")),
+        )
+    )
+    if not visible_text:
+        return False
+
+    last_final_text = normalize_transcript_text(str(state.get("last_final_text", "")))
+    if visible_text == last_final_text:
+        return False
+
+    event: Dict[str, Any] = {
+        "type": "final",
+        "text": visible_text,
+        "segment_final": True,
+    }
+    if utterance_final:
+        event["utterance_final"] = True
+    write_stdout(event)
+    state["confirmed_text"] = visible_text
+    state["partial_text"] = ""
+    state["last_final_text"] = visible_text
+    return True
+
+
 class WebSocketClient:
     def __init__(self, url: str, headers: Dict[str, str], timeout: int) -> None:
         parsed = urlparse(url)
@@ -368,6 +396,7 @@ def handle_server_message(message: Dict[str, Any], state: Dict[str, Any]) -> Non
         )
         state["confirmed_text"] = full_text
         state["partial_text"] = ""
+        state["last_final_text"] = full_text
         write_stdout(
             {
                 "type": "final",
@@ -385,6 +414,7 @@ def handle_server_message(message: Dict[str, Any], state: Dict[str, Any]) -> Non
         )
         state["confirmed_text"] = full_text
         state["partial_text"] = ""
+        state["last_final_text"] = full_text
         event: Dict[str, Any] = {
             "type": "final_timestamps",
             "text": full_text,
@@ -398,6 +428,7 @@ def handle_server_message(message: Dict[str, Any], state: Dict[str, Any]) -> Non
         return
 
     if message_type.endswith("error") or message_type == "error":
+        emit_fallback_final(state)
         error_text = str(message.get("error", "Unknown ElevenLabs error."))
         event: Dict[str, Any] = {
             "type": "error",
@@ -428,6 +459,7 @@ def run() -> int:
         "closed": False,
         "confirmed_text": "",
         "partial_text": "",
+        "last_final_text": "",
     }
     stop_event = threading.Event()
 
@@ -493,6 +525,7 @@ def run() -> int:
     finally:
         if saw_finish and not stop_event.is_set():
             thread.join(timeout=finish_grace_secs)
+        emit_fallback_final(state)
         stop_event.set()
         client.close()
         thread.join(timeout=1.0)

@@ -89,6 +89,30 @@ def new_event_id() -> str:
     return "event_" + uuid.uuid4().hex
 
 
+def emit_fallback_final(state: Dict[str, Any], utterance_final: bool = True) -> bool:
+    visible_text = normalize_transcript_text(str(state.get("latest_partial_text", "")))
+    if not visible_text:
+        return False
+
+    last_final_text = normalize_transcript_text(str(state.get("last_final_text", "")))
+    if visible_text == last_final_text:
+        return False
+
+    event: Dict[str, Any] = {
+        "type": "final",
+        "text": visible_text,
+        "segment_final": True,
+    }
+    if utterance_final:
+        event["utterance_final"] = True
+    write_stdout(event)
+    state["last_final_text"] = visible_text
+    state["confirmed_text"] = visible_text
+    state["latest_partial_text"] = ""
+    state["partials"].clear()
+    return True
+
+
 class WebSocketClient:
     def __init__(self, url: str, headers: Dict[str, str], timeout: int) -> None:
         parsed = urlparse(url)
@@ -373,15 +397,12 @@ def handle_server_message(message: Dict[str, Any], state: Dict[str, Any]) -> Non
         preview_text = str(message.get("text", "")) + str(message.get("stash", ""))
         if item_id:
             state["partials"][item_id] = preview_text
-        write_stdout(
-            {
-                "type": "partial",
-                "text": combine_transcript(
-                    str(state.get("confirmed_text", "")),
-                    preview_text,
-                ),
-            }
+        visible_text = combine_transcript(
+            str(state.get("confirmed_text", "")),
+            preview_text,
         )
+        state["latest_partial_text"] = visible_text
+        write_stdout({"type": "partial", "text": visible_text})
         return
 
     if message_type == "conversation.item.input_audio_transcription.completed":
@@ -389,6 +410,8 @@ def handle_server_message(message: Dict[str, Any], state: Dict[str, Any]) -> Non
         transcript = str(message.get("transcript", "")).strip()
         full_text = combine_transcript(str(state.get("confirmed_text", "")), transcript)
         state["confirmed_text"] = full_text
+        state["latest_partial_text"] = ""
+        state["last_final_text"] = full_text
         if item_id:
             state["partials"].pop(item_id, None)
         event: Dict[str, Any] = {"type": "final", "text": full_text, "segment_final": True}
@@ -402,6 +425,7 @@ def handle_server_message(message: Dict[str, Any], state: Dict[str, Any]) -> Non
         return
 
     if message_type == "conversation.item.input_audio_transcription.failed":
+        emit_fallback_final(state)
         error = message.get("error")
         error_message = "Input audio transcription failed."
         if isinstance(error, dict):
@@ -417,6 +441,7 @@ def handle_server_message(message: Dict[str, Any], state: Dict[str, Any]) -> Non
         return
 
     if message_type == "error":
+        emit_fallback_final(state)
         error = message.get("error")
         error_message = "Unknown Bailian error."
         if isinstance(error, dict):
@@ -445,8 +470,11 @@ def run() -> int:
         "error": None,
         "closed": False,
         "confirmed_text": "",
+        "latest_partial_text": "",
+        "last_final_text": "",
         "last_item_id": "",
         "partials": {},
+        "pending_audio_since_commit": False,
         "server_finished": False,
     }
     stop_event = threading.Event()
@@ -498,13 +526,16 @@ def run() -> int:
                         "audio": audio_base64,
                     }
                 )
+                state["pending_audio_since_commit"] = True
                 if bool(event.get("commit", False)):
-                    client.send_json(
-                        {
-                            "event_id": new_event_id(),
-                            "type": "input_audio_buffer.commit",
-                        }
-                    )
+                    if state.get("pending_audio_since_commit"):
+                        client.send_json(
+                            {
+                                "event_id": new_event_id(),
+                                "type": "input_audio_buffer.commit",
+                            }
+                        )
+                        state["pending_audio_since_commit"] = False
                 continue
 
             if event_type == "finish":
@@ -520,6 +551,7 @@ def run() -> int:
     finally:
         if saw_finish and not stop_event.is_set():
             thread.join(timeout=finish_grace_secs)
+        emit_fallback_final(state)
         stop_event.set()
         client.close()
         thread.join(timeout=1.0)

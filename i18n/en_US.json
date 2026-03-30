@@ -5,6 +5,8 @@
   "providers.elevenlabs.batch.description": "Use the ElevenLabs speech-to-text API for cloud ASR.",
   "providers.elevenlabs.streaming.title": "ElevenLabs (Streaming)",
   "providers.elevenlabs.streaming.description": "Use the ElevenLabs realtime speech-to-text API for streaming cloud ASR.",
+  "providers.bailian.batch.title": "Bailian (Batch)",
+  "providers.bailian.batch.description": "Use Bailian Qwen3-ASR-Flash through the OpenAI-compatible chat completions API for cloud ASR.",
   "providers.bailian.streaming.title": "Bailian (Streaming)",
   "providers.bailian.streaming.description": "Use the Bailian Qwen-ASR-Realtime API for streaming cloud ASR.",
   "providers.doubao.streaming.title": "Doubao (Streaming)",

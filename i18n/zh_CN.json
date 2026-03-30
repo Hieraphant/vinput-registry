@@ -5,6 +5,8 @@
   "providers.elevenlabs.batch.description": "通过 ElevenLabs speech-to-text API 调用云端 ASR。",
   "providers.elevenlabs.streaming.title": "ElevenLabs（流式）",
   "providers.elevenlabs.streaming.description": "通过 ElevenLabs realtime speech-to-text API 调用流式云端 ASR。",
+  "providers.bailian.batch.title": "阿里百炼（非流式）",
+  "providers.bailian.batch.description": "通过百炼 Qwen3-ASR-Flash OpenAI 兼容 chat completions 接口调用云端 ASR。",
   "providers.bailian.streaming.title": "阿里百炼（流式）",
   "providers.bailian.streaming.description": "通过百炼 Qwen-ASR-Realtime API 调用流式云端 ASR。",
   "providers.doubao.streaming.title": "豆包（流式）",
