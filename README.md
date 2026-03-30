@@ -35,6 +35,32 @@ All resource items should contain:
 Provider items additionally contain:
 
 - `stream`: `true` for streaming scripts, `false` for one-shot scripts
+- `envs`: runtime environment variable declarations for local execution
+
+## Provider Env Rules
+
+Provider env names should use the `VINPUT_ASR_*` namespace.
+
+Shared provider envs should keep stable names and meanings:
+
+- `VINPUT_ASR_API_KEY`: bearer-style API credential
+- `VINPUT_ASR_APP_ID`: app identifier for providers that require it separately
+- `VINPUT_ASR_ACCESS_TOKEN`: token credential for providers that do not use API keys
+- `VINPUT_ASR_URL`: full request or websocket endpoint override
+- `VINPUT_ASR_BASE_URL`: base endpoint override when the script constructs the final path
+- `VINPUT_ASR_MODEL`: remote model identifier
+- `VINPUT_ASR_LANGUAGE`: explicit transcription language hint
+- `VINPUT_ASR_PROMPT`: optional recognition prompt or bias text
+- `VINPUT_ASR_TIMEOUT`: end-to-end network timeout in seconds
+- `VINPUT_ASR_FINISH_GRACE_SECS`: extra wait time after local `finish` before closing
+- `VINPUT_ASR_ENABLE_VAD`: enable server-side VAD when the provider supports it
+- `VINPUT_ASR_VAD_THRESHOLD`: provider VAD sensitivity threshold
+- `VINPUT_ASR_VAD_PREFIX_PADDING_MS`: audio padding kept before detected speech
+- `VINPUT_ASR_VAD_SILENCE_DURATION_MS`: silence duration used to close a speech turn
+
+Provider-specific envs are allowed when the upstream API exposes features that do
+not map cleanly to the shared set. These should still use the `VINPUT_ASR_*`
+prefix and should be listed after the shared envs in `registry/providers.json`.
 
 ## Current Scope
 

@@ -35,18 +35,32 @@ explicitly sets `sample_rate`.
 ## Environment Variables
 
 - `VINPUT_ASR_API_KEY` required
+  Bearer token sent in the `Authorization` header.
 - `VINPUT_ASR_URL` optional
+  Full realtime websocket URL. Overrides the default endpoint.
 - `VINPUT_ASR_MODEL` optional
+  Realtime transcription model id.
 - `VINPUT_ASR_LANGUAGE` optional
+  Language hint forwarded to the upstream transcription session.
 - `VINPUT_ASR_PROMPT` optional
+  Prompt or bias text forwarded to the upstream transcription session.
 - `VINPUT_ASR_TIMEOUT` optional
+  Network timeout in seconds.
 - `VINPUT_ASR_FINISH_GRACE_SECS` optional
+  Extra wait time after local `finish` before the script closes the socket.
 - `VINPUT_ASR_BASE_URL` optional
+  Base HTTP(S) URL used to derive the realtime websocket URL when `VINPUT_ASR_URL`
+  is not provided.
 - `VINPUT_ASR_TARGET_SAMPLE_RATE` optional
+  Target sample rate sent to the upstream API after local resampling.
 - `VINPUT_ASR_ENABLE_VAD` optional
+  Enables upstream server-side VAD.
 - `VINPUT_ASR_VAD_THRESHOLD` optional
+  VAD sensitivity threshold passed to the provider.
 - `VINPUT_ASR_VAD_PREFIX_PADDING_MS` optional
+  Milliseconds of audio padding preserved before speech start.
 - `VINPUT_ASR_VAD_SILENCE_DURATION_MS` optional
+  Milliseconds of silence required before the provider closes a speech turn.
 
 ## Notes
 
