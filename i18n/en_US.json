@@ -10,7 +10,7 @@
   "provider.bailian.streaming.title": "Bailian (Streaming)",
   "provider.bailian.streaming.description": "Use the Bailian Qwen-ASR-Realtime API for streaming cloud ASR.",
   "provider.doubao.streaming.title": "Doubao (Streaming)",
-  "provider.doubao.streaming.description": "Use the Doubao ASR Realtime API on Volcengine AI Gateway for streaming cloud ASR.",
+  "provider.doubao.streaming.description": "Use the official Volcengine OpenSpeech bigmodel streaming ASR API for streaming cloud ASR.",
   "provider.doubaoime.streaming.title": "Doubao IME (Streaming)",
   "provider.doubaoime.streaming.description": "Use the unofficial Doubao IME realtime ASR protocol for streaming cloud ASR.",
   "provider.openai-compatible.batch.title": "OpenAI-Compatible (Batch)",
@@ -40,5 +40,7 @@
   "model.sherpa-onnx.streaming-zipformer-en-20m-2023-02-17.title": "Streaming Zipformer EN",
   "model.sherpa-onnx.streaming-zipformer-en-20m-2023-02-17.description": "Compact English streaming Zipformer model for local realtime recognition.",
   "model.sherpa-onnx.streaming-zipformer-zh-int8-2025-06-30.title": "Streaming Zipformer ZH",
-  "model.sherpa-onnx.streaming-zipformer-zh-int8-2025-06-30.description": "Chinese streaming Zipformer model for local realtime recognition."
+  "model.sherpa-onnx.streaming-zipformer-zh-int8-2025-06-30.description": "Chinese streaming Zipformer model for local realtime recognition.",
+  "model.sherpa-onnx.moonshine-tiny-en-int8.title": "Moonshine Tiny EN",
+  "model.sherpa-onnx.moonshine-tiny-en-int8.description": "Compact English Moonshine model for offline local speech recognition."
 }
